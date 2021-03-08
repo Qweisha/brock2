@@ -1,0 +1,69 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened>
+        <div class="img">
+            <a href="/"> <img src="./assets/logo.png" alt="logo"></a>
+        </div>
+        <div class="category">
+            <h2>Category</h2>
+        </div>
+        <div class="menu">
+
+            <ul class="list-styel-none">
+                <li> <a class="text-decoration-none" href="#"> MEN</a></li>
+                <li><a class="text-decoration-none" href="#">WOMEN</a></li>
+                <li class="drop-menu">
+                    <a class="text-decoration-none" id="accessories" class="accessories" href="#">ACCESSORIES </a>
+                    <ul class="dropdown">
+                        <li><a [routerLink]="[ '/men-accessories' ]">MEN</a> </li>
+                        <li><a [routerLink]="[ '/women-accessories' ]">WOMEN</a> </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="links">
+            <ul>
+
+                <li><a href="#">
+                        <fa-icon [icon]="faFacebook"></fa-icon>
+                    </a> </li>
+                <li><a href="#">
+                        <fa-icon [icon]="faTwitter"></fa-icon>
+                    </a> </li>
+                <li><a href="#">
+                        <fa-icon [icon]="faInstagram"></fa-icon>
+                    </a> </li>
+
+            </ul>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+       
+        <button class="btn-1" mat-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div id="navbar">
+            <div class="icons">
+                <ul class="list-styel-none">
+                    <li><a class="text-decoration-none" [routerLink]="[ '' ]">Home</a></li>
+                    <li><a class="text-decoration-none" [routerLink]="[ '/about' ]">About Us</a></li>
+                    <li><a class="text-decoration-none" [routerLink]="[ '/gift' ]">Gift Registry</a></li>
+                    <li><a class="text-decoration-none" [routerLink]="[ '/myaccount' ]">My Account</a></li>
+                    <li><a class="text-decoration-none" [routerLink]="[ '/contact-us' ]">Contact Us</a></li>
+                    <!-- <li><a class="text-decoration-none" [routerLink]="[ '/blog' ]">Blog</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <div class="left-icons">
+            <button mat-flat-button [routerLink]="[ '/myaccount' ]">Login <mat-icon>login</mat-icon></button>
+            <button mat-flat-button> Shopping Cart <mat-icon>add_shopping_cart
+                </mat-icon></button>
+            <button mat-flat-button>
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>
